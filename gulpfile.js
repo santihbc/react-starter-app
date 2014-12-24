@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var browserify = require('gulp-browserify');
 var concat = require('gulp-concat');
+var jshint = require('gulp-jshint');
+var stylish = require('jshint-stylish');
 
 gulp.task('browserify', function() {
 	gulp.src('src/js/main.js')
@@ -14,8 +16,14 @@ gulp.task('copy', function() {
 		.pipe(gulp.dest('dist'));
 });
 
-gulp.task('default',['browserify', 'copy']);
+gulp.task('jshint', function () {
+	return gulp.src('src/js/**/*.js')
+		.pipe(jshint())
+		.pipe(jshint.reporter(stylish));
+});
 
-gulp.task('watch', function() {
+gulp.task('default', ['browserify', 'copy']);
+
+gulp.task('watch', ['jshint'], function() {
 	gulp.watch('src/**/*.*', ['default']);
 });
