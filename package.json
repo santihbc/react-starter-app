@@ -4,11 +4,14 @@
   "description": "",
   "author": "Santi Herrero",
   "license": "ISC",
-	"devDependencies": {
-		"gulp": "^3.7.0",
-		"gulp-browserify": "^0.5.0",
-		"gulp-concat": "^2.2.0",
-		"react": "^0.12.0",
-		"reactify": "^0.13.1"
-	}
+  "dependencies": {
+    "react": "^0.12.0",
+    "es6-promise": "^2.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.7.0",
+    "gulp-browserify": "^0.5.0",
+    "gulp-concat": "^2.2.0",
+    "reactify": "^0.13.1"
+  }
 }
