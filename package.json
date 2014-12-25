@@ -5,8 +5,7 @@
   "author": "Santi Herrero",
   "license": "ISC",
   "dependencies": {
-    "react": "^0.12.0",
-    "es6-promise": "^2.0.1"
+    "react": "^0.12.0"
   },
   "devDependencies": {
     "gulp": "^3.7.0",
