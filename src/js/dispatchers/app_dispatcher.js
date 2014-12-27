@@ -1,7 +1,7 @@
-var Dispatcher = require("./_base/_dispatcher.js");
-var merge = require("react/lib/merge");
+var Dispatcher = require("flux").Dispatcher;
+var assign = require('object-assign');
 
-var AppDispatcher = merge(Dispatcher.prototype, {
+var AppDispatcher = assign(new Dispatcher(), {
 
 	handleViewAction: function (action) {
 		this.dispatch({
@@ -13,6 +13,13 @@ var AppDispatcher = merge(Dispatcher.prototype, {
 	handleServerAction: function (action) {
 		this.dispatch({
 			source: "SERVER_ACTION",
+			action: action
+		});
+	},
+
+	handleRouterAction: function (action) {
+		this.dispatch({
+			source: "ROUTER_ACTION",
 			action: action
 		});
 	}
