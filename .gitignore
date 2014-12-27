@@ -1,5 +1,7 @@
 # Created by .gitignore support plugin (hsz.mobi)
 
+dist
+
 ### Node template
 # Logs
 logs
